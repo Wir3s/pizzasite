@@ -56,8 +56,9 @@ footer {
     .main {
         background-position: center 10%;
         background-size: contain;
-
+        background-repeat: no-repeat;
     }
+    
     nav ul {
         flex-direction: column; 
         background: rgba(0, 0, 0, 0.7); 
