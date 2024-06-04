@@ -54,7 +54,9 @@ footer {
 /* Adjustments for mobile screens */
 @media (max-width: 600px) {
     .main {
-        background-position: center 10%; 
+        background-position: center 10%;
+        background-size: contain;
+
     }
     nav ul {
         flex-direction: column; 
