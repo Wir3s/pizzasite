@@ -67,7 +67,7 @@ footer {
         position: fixed; /* Keeps the header fixed at the top */
         width: 100%;
         text-align: center; /* Centers the text */
-        background: rgba(0, 0, 0, 0.8); /* Ensure readability */
+        background: rgba(0, 0, 0, 0.7); /* Ensure readability */
     }
 
     nav ul {
