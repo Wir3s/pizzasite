@@ -63,14 +63,26 @@ footer {
 
 /* Adjustments for mobile screens */
 @media (max-width: 600px) {
-    .main {
-        background-position: center 10%;
-        background-size: contain;
-        background-repeat: no-repeat;
+    header {
+        position: fixed; /* Keeps the header fixed at the top */
+        width: 100%;
+        text-align: center; /* Centers the text */
+        background: rgba(0, 0, 0, 0.8); /* Ensure readability */
     }
 
     nav ul {
-        flex-direction: column; 
-        background: rgba(0, 0, 0, 0.7); 
+        flex-direction: column;
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        height: 100vh; /* Full viewport height */
+        padding-top: 50px; /* Give some space from the top */
+    }
+
+    nav ul li {
+        margin: 20px 0; /* More vertical spacing between menu items */
+    }
+
+    nav ul li a {
+        font-size: 24px; /* Larger font for easier clicking */
     }
 }
