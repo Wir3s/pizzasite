@@ -75,7 +75,7 @@ footer {
         justify-content: center; /* Center items vertically */
         align-items: center; /* Center items horizontally */
         height: 100vh; /* Full viewport height */
-        padding-top: 50px; /* Give some space from the top */
+        padding-top: 30px; /* Give some space from the top */
     }
 
     nav ul li {
