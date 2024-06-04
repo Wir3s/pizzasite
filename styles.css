@@ -39,6 +39,7 @@ nav ul li a {
     background-image: url('images/banner.webp');
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +59,7 @@ footer {
         background-size: contain;
         background-repeat: no-repeat;
     }
-    
+
     nav ul {
         flex-direction: column; 
         background: rgba(0, 0, 0, 0.7); 
