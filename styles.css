@@ -11,27 +11,36 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     color: white;
     z-index: 10; /* Ensures the header is above other content */
+    padding: 10px 0;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
-    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Gold color on hover for better interaction */
 }
 
 .main {
