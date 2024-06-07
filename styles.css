@@ -55,6 +55,17 @@ nav ul li a:hover {
     justify-content: center;
 }
 
+.info {
+    color: white; /* Ensures text is white */
+    text-align: center; /* Centers the text */
+    padding: 10px;
+    margin-top: 20%; /* Adjust this value to push the content below the nav */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a dark semi-transparent background */
+    font-size: 18px; /* Adjust as needed */
+    font-weight: bold; /* Makes the text bold */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75); /* Adds a shadow for better legibility */
+}
+
 footer {
     text-align: center;
     padding: 20px 0;
@@ -97,5 +108,9 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .info {
+        margin-top: 40%; /* Increase margin for mobile if nav is taking up more space */
     }
 }
