@@ -56,14 +56,16 @@ nav ul li a:hover {
 }
 
 .info {
-    color: white; /* Ensures text is white */
-    text-align: center; /* Centers the text */
+    color: white;
+    text-align: center;
     padding: 10px;
-    margin-top: 20%; /* Adjust this value to push the content below the nav */
-    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a dark semi-transparent background */
-    font-size: 18px; /* Adjust as needed */
-    font-weight: bold; /* Makes the text bold */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75); /* Adds a shadow for better legibility */
+    margin-top: 40px; /* Appropriate spacing from the nav */
+    background: rgba(0, 0, 0, 0.6); /* Darker background for better legibility */
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    z-index: 5; /* Ensure it's above the main background but below the nav */
+    position: relative; /* Required to make z-index effective */
 }
 
 footer {
@@ -75,28 +77,28 @@ footer {
 
 /* Adjustments for mobile screens */
 @media (max-width: 600px) {
+
     header {
-        position: fixed; /* Keeps the header fixed at the top */
+        position: fixed;
         width: 100%;
-        text-align: center; /* Centers the text */
-        background: rgba(0, 0, 0, 0.7); /* Ensure readability */
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10; /* Keeps nav on top */
     }
 
     nav ul {
         flex-direction: column;
-        justify-content: center; /* Center items vertically */
-        align-items: center; /* Center items horizontally */
-        height: 100vh; /* Full viewport height */
-        padding-top: 30px; /* Give some space from the top */
+        padding-top: 20px; /* Adjusted padding */
+    }
+
+    nav ul li a {
+        font-size: 24px; /* Larger font size for better touch interaction */
     }
 
     nav ul li {
         margin: 20px 0; /* More vertical spacing between menu items */
     }
 
-    nav ul li a {
-        font-size: 24px; /* Larger font for easier clicking */
-    }
+
 
     .main {
         background-image: 
@@ -108,6 +110,7 @@ footer {
     }
 
     .info {
-        margin-top: 40%; /* Increase margin for mobile if nav is taking up more space */
+        margin-top: 50%; /* Increased top margin for mobile */
+        z-index: 5; /* Ensure visibility above the main content */
     }
 }
