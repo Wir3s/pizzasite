@@ -87,12 +87,13 @@ footer {
     }
 
     nav ul {
-        flex-direction: column;
-        padding-top: 20px; /* Adjusted padding */
+        justify-content: flex-start; /* Aligns menu items to the left */
+        padding-left: 10px; /* Adds padding to ensure it doesn't hug the edge */
     }
 
     nav ul li a {
         font-size: 24px; /* Larger font size for better touch interaction */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Increase shadow to improve legibility */
     }
 
     nav ul li {
