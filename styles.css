@@ -87,18 +87,21 @@ footer {
     }
 
     nav ul {
-        justify-content: flex-start; /* Aligns menu items to the left */
-        padding-left: 10px; /* Adds padding to ensure it doesn't hug the edge */
-    }
-
-    nav ul li a {
-        font-size: 24px; /* Larger font size for better touch interaction */
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Increase shadow to improve legibility */
+        justify-content: center; 
+        padding-left: 0; /* Adds padding to ensure it doesn't hug the edge */
+        flex-wrap: nowrap;
     }
 
     nav ul li {
-        margin: 20px 0; /* More vertical spacing between menu items */
+        margin: 0 10px; /* More vertical spacing between menu items */
     }
+
+    nav ul li a {
+        font-size: 18px; /* Larger font size for better touch interaction */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Increase shadow to improve legibility */
+    }
+
+
 
 
 
