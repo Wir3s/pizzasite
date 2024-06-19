@@ -8,14 +8,24 @@ body, html {
 
 
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    color: white;
-    z-index: 10; /* Ensures the header is above other content */
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Distributes space between items */
+    background: rgba(0, 0, 0, 0.8);
     padding: 10px 0;
+    width: 100%;
+    position: sticky; /* Makes the entire header sticky */
+    top: 0; /* Sticks at the top of the viewport */
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.logo {
+    width: 60px;
+    margin-left: 20px;
+}
+
+.navbar {
+    flex: 1 1 auto; /* Allows the navbar to fill the space */
 }
 
 nav ul {
@@ -24,11 +34,11 @@ nav ul {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    max-width: 960px;
+    /* max-width: 960px; */
 }
 
 nav ul li {
-    display: inline;
+    /* display: inline; */
     margin: 0 20px;
 }
 
