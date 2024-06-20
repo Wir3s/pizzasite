@@ -127,16 +127,10 @@ footer {
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Increase shadow to improve legibility */
     }
 
-
-
-
-
     .main {
-        background-image: 
-            linear-gradient(to top, rgba(0,0,0,0) 25%, transparent 25%), /* Transparent space */
-            url('images/banner.webp');
+        background-image: url('images/banner.webp');  
         background-size: cover;
-        background-position: center; /* Center the image after the transparent space */
+        background-position: center 10%; 
         background-repeat: no-repeat;
     }
 
