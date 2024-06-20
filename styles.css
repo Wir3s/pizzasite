@@ -22,7 +22,6 @@ header {
 .logo {
     width: 100px;
     margin-left: 20px;
-     background: rgba(0, 0, 0, 0.897); /* Matches the header background */
 }
 
 .navbar {
