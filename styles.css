@@ -130,7 +130,7 @@ footer {
     .main {
         background-image: url('images/banner.webp');  
         background-size: cover;
-        background-position: center 10%; 
+        background-position: center 100px; 
         background-repeat: no-repeat;
     }
 
