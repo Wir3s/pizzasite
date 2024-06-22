@@ -1,3 +1,12 @@
+:root {
+    --main-bg-color: rgba(0, 0, 0, 0.897);
+    --text-color: white;
+    --text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+    --hover-color: #FFD700;
+    --info-bg-color: #2a2a2a;
+    --footer-bg-color: #333;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,17 +15,16 @@ body, html {
     overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
-
 header {
     display: flex;
     align-items: center;
-    justify-content: space-around; /* Distributes space between items */
-    background: rgba(0, 0, 0, 0.897);
+    justify-content: space-around; 
+    background: var(--main-bg-color);
     padding: 10px 0;
     width: 100%;
-    position: sticky; /* Makes the entire header sticky */
-    top: 0; /* Sticks at the top of the viewport */
-    z-index: 1000; /* Ensures it stays on top of other content */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -25,7 +33,7 @@ header {
 }
 
 .navbar {
-    flex: 1 1 auto; /* Allows the navbar to fill the space */
+    flex: 1;
 }
 
 nav ul {
@@ -34,81 +42,88 @@ nav ul {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    /* max-width: 960px; */
 }
 
 nav ul li {
-    /* display: inline; */
     margin: 0 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     font-size: 20px;
     font-weight: bold;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+    text-shadow: var(--text-shadow);
 }
 
 nav ul li a:hover {
-    color: #FFD700; /* Gold color on hover for better interaction */
+    color: var(--hover-color);
 }
 
 .main {
     height: 100vh;
-    background-image: url('images/banner.webp');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: url('images/banner.webp') no-repeat center center / cover;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.info {
-    color: white;
+.content-section {
     text-align: center;
-    padding: 10px;
-    margin-top: 40px; /* Appropriate spacing from the nav */
-    background: rgba(0, 0, 0, 0.6); /* Darker background for better legibility */
     font-size: 18px;
     font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
-    z-index: 5; /* Ensure it's above the main background but below the nav */
+    text-shadow: var(--text-shadow);
+    color: var(--text-color); /* Ensures text is readable */
+}
+
+.info {
+    margin-top: 40px; /* Appropriate spacing from the nav */
+    background-color: var(--info-bg-color);
+    background-image: radial-gradient(circle, #3a3a3a 1px, transparent 1px);
+    background-size: 10px 10px;
     position: relative; /* Required to make z-index effective */
     border: 1px solid #FFFFFF; /* White border for extra visibility */
+    padding: 10px;
 }
 
 .about-us {
-    background-color: #2a2a2a; /* Dark grey background */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures vertical centering of all items in .about-us */
+    background-color: var(--info-bg-color);
     background-image: radial-gradient(circle, #3a3a3a 1px, transparent 1px);
     background-size: 10px 10px;
-    color: #ffffff; /* Ensures text is readable */
-    padding: 20px; /* Adds some spacing around the content */
+    padding: 20px;
+    width: 100%; /* Full width for proper centering */
 }
 
 .icon-section {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* Adds space between sections */
+    width: 100%; /* Full container width */
+    justify-content: center; /* Horizontally centers the content within .icon-section */
+    align-items: center; /* Vertically aligns items within the container */
+    margin-bottom: 20px; /* Space between sections */
 }
 
 .icon {
-    width: 60px; /* Set based on your design preference */
-    height: auto; /* Maintains aspect ratio */
-    margin-right: 20px; /* Space between icon and text */
+    width: 60px; /* Fixed width for the icon */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between the icon and the text */
 }
 
 .icon-description {
-    flex: 1; /* Allows text to fill the remaining space */
+    flex: 1;
+    text-align: left;
+    max-width: 600px; /* Maximum width of the text to avoid overstretching */
 }
 
 footer {
     text-align: center;
     padding: 20px 0;
-    background: #333;
-    color: white;
+    background: var(--footer-bg-color);
+    color: var(--text-color);
 }
+
 
 /* Adjustments for mobile screens */
 @media (max-width: 600px) {
@@ -163,14 +178,28 @@ footer {
         z-index: 5; /* Ensure visibility above the main content */
     }
 
+    .about-us {
+        padding-top: 14vh;
+    }
+
     .icon-section {
-        flex-direction: column; /* Stacks icon and text vertically */
-        align-items: center; /* Centers content */
-        text-align: center; /* Centers text */
+        display: flex;
+        flex-direction: column; /* Stacks items vertically on mobile */
+        justify-content: flex-start; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        width: 100%; /* Use full width to ensure centering within the parent */
+        margin: 20px 0; /* Adjust margins as needed */
     }
 
     .icon {
-        margin-right: 0; /* Removes margin since it’s now vertically aligned */
-        margin-bottom: 10px; /* Space between icon and text */
+        width: 60px; /* Keep your set width */
+        height: auto; /* Maintain aspect ratio */
+        margin: auto;
+        
+    }
+
+    .icon-description {
+        max-width: 90%;
+        padding-right: 30px;
     }
 }

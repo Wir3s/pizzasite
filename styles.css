@@ -100,9 +100,8 @@ nav ul li a:hover {
 .icon-section {
     display: flex;
     width: 100%; /* Full container width */
-    justify-content: flex-start; /* Horizontally centers the content within .icon-section */
+    justify-content: center; /* Horizontally centers the content within .icon-section */
     align-items: center; /* Vertically aligns items within the container */
-    
     margin-bottom: 20px; /* Space between sections */
 }
 
@@ -186,7 +185,7 @@ footer {
     .icon-section {
         display: flex;
         flex-direction: column; /* Stacks items vertically on mobile */
-        justify-content: center; /* Center items horizontally */
+        justify-content: flex-start; /* Center items horizontally */
         align-items: center; /* Center items vertically */
         width: 100%; /* Use full width to ensure centering within the parent */
         margin: 20px 0; /* Adjust margins as needed */
@@ -201,5 +200,6 @@ footer {
 
     .icon-description {
         max-width: 90%;
+        padding-right: 30px;
     }
 }
