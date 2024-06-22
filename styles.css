@@ -100,9 +100,9 @@ nav ul li a:hover {
 .icon-section {
     display: flex;
     width: 100%; /* Full container width */
-    justify-content: center; /* Horizontally centers the content within .icon-section */
+    justify-content: flex-start; /* Horizontally centers the content within .icon-section */
     align-items: center; /* Vertically aligns items within the container */
-    text-align: center; /* Ensures text within is centered if it wraps */
+    
     margin-bottom: 20px; /* Space between sections */
 }
 
@@ -113,7 +113,8 @@ nav ul li a:hover {
 }
 
 .icon-description {
-    display: inline-block; /* Treat the text block as an inline element */
+    flex: 1;
+    text-align: left;
     max-width: 600px; /* Maximum width of the text to avoid overstretching */
 }
 
