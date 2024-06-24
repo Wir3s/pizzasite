@@ -181,6 +181,10 @@ footer {
         background-repeat: no-repeat;
     }
 
+    .game-level-up {
+        padding-top: 24vh;
+    }
+
     .info {
         margin-top: 50%; /* Increased top margin for mobile */
         z-index: 5; /* Ensure visibility above the main content */
