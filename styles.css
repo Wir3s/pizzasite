@@ -69,11 +69,14 @@ nav ul li a:hover {
     justify-content: center;
 }
 
-.game-level-up {
+.level-up-container {
     display: flex;
     justify-content: center; /* Center the image horizontally */
-    width: 100%; /* Ensure it takes the full width */
-    margin-bottom: 20px; /* Add some space between the image and the info section */
+    
+}
+
+.level-up-image {
+    max-width: 10vw;
 }
 
 .content-section {
@@ -177,12 +180,20 @@ footer {
     .main {
         background-image: url('images/banner.webp');  
         background-size: cover;
-        background-position: center 12.5vh; 
+        background-position: center 11vh; 
         background-repeat: no-repeat;
     }
 
-    .game-level-up {
-        padding-top: 24vh;
+    .level-up-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10vh;
+    }
+
+    .level-up-image {
+        max-width: 20vw;
     }
 
     .info {
