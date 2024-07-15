@@ -70,12 +70,22 @@ nav ul li a:hover {
 }
 
 .main {
-    height: 100vh;
-    background: url('images/banner.webp') no-repeat center center / cover;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Change to 'space-between' for even spacing */
+    height: 100vh;
+    background: url('images/inside_photograph.webp') no-repeat center center / cover;
+}
+
+.main-logo {
+    width: 200px; /* adjust width as needed */
+    margin-top: 20px; /* or adjust this to push it further down if needed */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    position: relative;
+    z-index: 2; /* Makes sure it's above the background image */
 }
 
 .level-up-container {
@@ -97,7 +107,7 @@ nav ul li a:hover {
 }
 
 .info {
-    margin-top: 40px; /* Appropriate spacing from the nav */
+    margin-bottom: 60px;
     background-color: var(--info-bg-color);
     background-image: radial-gradient(circle, #3a3a3a 1px, transparent 1px);
     background-size: 10px 10px;
@@ -107,34 +117,124 @@ nav ul li a:hover {
 }
 
 .about-us {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Ensures vertical centering of all items in .about-us */
-    background-color: var(--info-bg-color);
+    background-color: #1a1a1a; /* Darker shade for better contrast */
     background-image: radial-gradient(circle, #3a3a3a 1px, transparent 1px);
     background-size: 10px 10px;
-    padding: var(--default-padding);
-    width: 100%; /* Full width for proper centering */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+.content-wrapper {
+    width: 100%; /* Full width */
+    max-width: 960px; /* Max width to control spacing on larger screens */
+    margin: auto; /* Centers the wrapper */
+    padding: 20px; /* Padding for aesthetics */
 }
 
 .icon-section {
-    display: flex;
-    width: 100%; /* Full container width */
-    justify-content: center; /* Horizontally centers the content within .icon-section */
-    align-items: center; /* Vertically aligns items within the container */
-    margin-bottom: var(--default-margin); /* Space between sections */
+    display: grid;
+    grid-template-columns: auto 1fr; /* Auto for the icon width and 1fr for the text */
+    gap: 10px; /* Reduced gap for tighter layout */
+    align-items: center;
+    justify-content: center; /* This will center the grid items horizontally */
+    text-align: left; /* Aligns text to the left for better readability next to the icon */
+    margin-top: 20px;
+    width: 100%; /* Ensure it takes the full container width */
 }
 
 .icon {
-    width: 60px; /* Fixed width for the icon */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: var(--default-margin); /* Space between the icon and the text */
+    width: 80px; /* Larger icons */
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
 .icon-description {
-    flex: 1;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Slight background for readability */
+    border-radius: 8px;
+}
+
+.meet-the-team {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);;
+    color: var(--text-color);
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.team-img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px;
+}
+
+.member-info h3 {
+    margin: 0;
+    color: var(--hover-color);
+}
+
+.member-info p {
+    font-size: 16px;
     text-align: left;
-    max-width: 600px; /* Maximum width of the text to avoid overstretching */
+    max-width: 600px; /* Adjust as necessary */
+}
+
+.menu-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/menupagebackground.webp'); /* Update this path with your actual image file */
+    background-size: cover;
+    background-position: center;
+    width: 100%; /* Ensures full width coverage */
+}
+
+.page-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--hover-color);
+    text-shadow: var(--text-shadow);
+}
+
+.pizza-section h2 {
+    color: var(--hover-color);
+    margin-bottom: 15px;
+}
+
+.pizza-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* This creates a responsive grid */
+    gap: 20px; /* Space between grid items */
+    justify-content: center; /* Center the grid items in the container */
+    width: 100%;
+}
+
+.menu-item {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left; /* Aligns text to the left within each menu item */
+}
+
+.menu-item h3 {
+    color: var(--hover-color);
+}
+
+.menu-item p {
+    color: var(--text-color);
+    font-size: 16px;
 }
 
 footer {
@@ -165,6 +265,10 @@ footer {
         max-width:100px;
     }
 
+    .main-logo {
+        display: none;
+    }
+
     nav {
         width: 100%;
     }
@@ -186,12 +290,7 @@ footer {
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Increase shadow to improve legibility */
     }
 
-    .main {
-        background-image: url('images/banner.webp');  
-        background-size: cover;
-        background-position: center 11vh; 
-        background-repeat: no-repeat;
-    }
+
 
     .level-up-container {
         display: flex;
@@ -205,13 +304,22 @@ footer {
         max-width: 20vw;
     }
 
+    .main {
+        justify-content: flex-start; /* Aligns content to the top */
+        padding-top: 10vh; /* Adds padding to the top to lower all content */
+    }
+
     .info {
-        margin-top: 50%; /* Increased top margin for mobile */
-        z-index: 5; /* Ensure visibility above the main content */
+        margin-top: 20vh; /* Smaller value for better control */
+        padding: 20px; /* Ensure there's padding around the text */
     }
 
     .about-us {
-        padding-top: 14vh;
+        padding-top: 16vh;
+    }
+
+    .menu-page {
+        padding-top: 16vh;
     }
 
     .icon-section {
@@ -232,8 +340,9 @@ footer {
 
     .icon-description {
         max-width: 90%;
-        padding-right: 40px;
-        padding-left: 30px;
+        /* padding-right: 40px; */
+        /* padding-left: 30px; */
+        margin-right: 40px;
         text-align: center;
     }
 }
