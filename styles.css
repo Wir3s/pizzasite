@@ -27,9 +27,9 @@ body, html {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-around; 
+    justify-content: space-between; 
     background: var(--main-bg-color);
-    padding: 10px 0;
+    padding: 10px var(--default-margin);
     width: 100%;
     position: sticky;
     top: 0;
@@ -38,23 +38,25 @@ header {
 
 .logo {
     width: 100px;
-    margin-left: var(--default-margin);
+    margin-right: var(--default-margin);
 }
 
 .navbar {
     flex: 1;
+    position: relative; /* Ensure the menu stays positioned correctly */
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     justify-content: center;
+    gap: 40px; /* Increased gap for more spacing on desktop */
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0;
 }
 
 nav ul li a {
@@ -73,25 +75,63 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Change to 'space-between' for even spacing */
+    justify-content: space-between;
     height: 100vh;
-    background: url('images/inside_photograph.webp') no-repeat center center / cover;
+    background: var(--main-bg-color);
+    padding: var(--default-margin);
 }
 
-.main-logo {
-    width: 200px; /* adjust width as needed */
-    margin-top: 20px; /* or adjust this to push it further down if needed */
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    border-radius: 10px; /* Rounded corners */
-    position: relative;
-    z-index: 2; /* Makes sure it's above the background image */
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: var(--default-padding);
+    background: var(--info-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--default-padding);
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--default-padding);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.info {
+    background-color: rgba(42, 42, 42, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    text-shadow: var(--text-shadow);
+    font-size: var(--font-size-medium);
 }
 
 .level-up-container {
     display: flex;
-    justify-content: center; /* Center the image horizontally */
-    
+    justify-content: center;
 }
 
 .level-up-image {
@@ -106,25 +146,6 @@ nav ul li a:hover {
     color: var(--text-color); /* Ensures text is readable */
 }
 
-.info {
-    margin-bottom: 60px;
-    background-color: var(--info-bg-color);
-    background-image: radial-gradient(circle, #3a3a3a 1px, transparent 1px);
-    background-size: 10px 10px;
-    position: relative; /* Required to make z-index effective */
-    border: 1px solid #FFFFFF; /* White border for extra visibility */
-    padding: 10px;
-}
-
-.about-us {
-    background-color: #1a1a1a; /* Darker shade for better contrast */
-    background-image: radial-gradient(circle, #3a3a3a 1px, transparent 1px);
-    background-size: 10px 10px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    padding: 20px;
-}
-
 .content-wrapper {
     width: 100%; /* Full width */
     max-width: 960px; /* Max width to control spacing on larger screens */
@@ -132,110 +153,154 @@ nav ul li a:hover {
     padding: 20px; /* Padding for aesthetics */
 }
 
-.icon-section {
-    display: grid;
-    grid-template-columns: auto 1fr; /* Auto for the icon width and 1fr for the text */
-    gap: 10px; /* Reduced gap for tighter layout */
-    align-items: center;
-    justify-content: center; /* This will center the grid items horizontally */
-    text-align: left; /* Aligns text to the left for better readability next to the icon */
-    margin-top: 20px;
-    width: 100%; /* Ensure it takes the full container width */
+.about-us {
+    background-color: #1a1a1a; /* Base dark background */
+    background-image: radial-gradient(circle, #3a3a3a 1px, transparent 1px); /* Subtle pattern */
+    background-size: 10px 10px;
+    color: #fff; /* Ensures text stands out */
+    padding: 40px 20px; /* Adds more space for the new polished design */
 }
 
-.icon {
-    width: 80px; /* Larger icons */
-    transition: transform 0.3s ease;
-}
-
-.icon:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-}
-
-.icon-description {
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1); /* Slight background for readability */
-    border-radius: 8px;
-}
 
 .meet-the-team {
     text-align: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);;
-    color: var(--text-color);
+    margin-bottom: 40px;
 }
 
 .team-member {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .team-img {
-    width: 150px; /* Adjust size as needed */
+    width: 150px;
     height: auto;
     margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .member-info h3 {
     margin: 0;
-    color: var(--hover-color);
+    color: #FF6347; /* Slightly vibrant color for the name */
+    font-size: 24px;
 }
 
 .member-info p {
+    margin: 10px 0;
     font-size: 16px;
-    text-align: left;
-    max-width: 600px; /* Adjust as necessary */
+    color: #555;
 }
 
-.menu-page {
+.icon-section {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin: 20px 0;
     padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    width: 80px;
+    margin-right: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon-description {
+    font-size: 16px;
+    color: #333;
+}
+
+.icon-description:hover {
+    color: #FF6347; /* Matches the name color for emphasis */
+    transition: color 0.3s ease;
+}
+
+
+.menu-page {
+    background: linear-gradient(to bottom, #333, #111);
+    padding: 40px;
+    color: white;
     text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/menupagebackground.webp'); /* Update this path with your actual image file */
-    background-size: cover;
-    background-position: center;
-    width: 100%; /* Ensures full width coverage */
 }
 
 .page-title {
+    font-size: 36px;
+    color: #00FFFF; /* Neon cyan for a retro glow effect */
+    text-shadow: 0 0 8px #00FFFF, 0 0 12px #00CCCC;
     margin-bottom: 20px;
-    font-size: 24px;
-    color: var(--hover-color);
-    text-shadow: var(--text-shadow);
-}
-
-.pizza-section h2 {
-    color: var(--hover-color);
-    margin-bottom: 15px;
 }
 
 .pizza-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* This creates a responsive grid */
-    gap: 20px; /* Space between grid items */
-    justify-content: center; /* Center the grid items in the container */
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .menu-item {
-    background: rgba(0, 0, 0, 0.75);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    text-align: left; /* Aligns text to the left within each menu item */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7);
 }
 
 .menu-item h3 {
-    color: var(--hover-color);
+    color: #FF4500; /* Bright orange for energy and contrast */
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 3px #FF4500, 0 0 2px #FF6347; /* Sharper shadow for readability */
+}
+
+.menu-item:hover h3 {
+    color: white;
 }
 
 .menu-item p {
-    color: var(--text-color);
     font-size: 16px;
+    color: #ddd;
 }
+
+
+
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #39FF14; /* Neon green for retro arcade vibes */
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 0 5px #32CD32;
+}
+
+.button:hover {
+    background: #32CD32; /* Slightly darker green for hover effect */
+    transform: scale(1.1);
+}
+
 
 footer {
     text-align: center;
@@ -244,9 +309,21 @@ footer {
     color: var(--text-color);
 }
 
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
 
-/* Adjustments for mobile screens */
-@media (max-width: 600px) {
+    .hero-left, .hero-right {
+        flex: unset;
+        width: 100%;
+        text-align: center;
+        margin-bottom: var(--default-padding);
+    }
+
+    .hero-image {
+        width: 80%;
+    }
 
     header {
         position: fixed;
@@ -279,6 +356,7 @@ footer {
         flex-wrap: nowrap;
         display: flex;
         align-items: center;
+        gap: 20px;
     }
 
     nav ul li {
@@ -289,8 +367,6 @@ footer {
         font-size: 18px; /* Larger font size for better touch interaction */
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Increase shadow to improve legibility */
     }
-
-
 
     .level-up-container {
         display: flex;
@@ -310,7 +386,7 @@ footer {
     }
 
     .info {
-        margin-top: 20vh; /* Smaller value for better control */
+        margin-top: 30vh; /* Smaller value for better control */
         padding: 20px; /* Ensure there's padding around the text */
     }
 
@@ -325,16 +401,16 @@ footer {
     .icon-section {
         display: flex;
         flex-direction: column; /* Stacks items vertically on mobile */
-        justify-content: flex-start; /* Center items horizontally */
+        justify-content: center; /* Center items horizontally */
         align-items: center; /* Center items vertically */
         width: 100%; /* Use full width to ensure centering within the parent */
-        margin: 20px 0; /* Adjust margins as needed */
+         margin: 10px 0; 
     }
 
     .icon {
         width: 60px; /* Keep your set width */
         height: auto; /* Maintain aspect ratio */
-        margin: auto;
+        margin: 0 auto;
         
     }
 
@@ -344,5 +420,24 @@ footer {
         /* padding-left: 30px; */
         margin-right: 40px;
         text-align: center;
+    }
+
+    .team-member {
+        flex-direction: column; /* Stacks the items vertically */
+        align-items: center; /* Centers the items horizontally */
+        text-align: center; /* Centers the text */
+    }
+
+    .team-img {
+        margin-bottom: 10px; /* Adds space between the image and the name */
+        width: 100px; /* Adjust the size of the image as needed */
+    }
+
+    .member-info {
+        max-width: 100%; /* Uses full width available */
+    }
+
+    .member-info h3, .member-info p {
+        margin: 0 0 10px 0; /* Adds space below each text element */
     }
 }
