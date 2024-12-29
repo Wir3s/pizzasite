@@ -343,6 +343,17 @@ footer {
         padding: 10px 0;
     }
 
+    .main {
+        justify-content: flex-start; /* Aligns content to the top */
+        padding: 40px 0 0 0; /* Padding top only, no padding on sides or bottom */
+        box-sizing: border-box; /* Ensure padding is included in the width calculation */
+        width: 100%; /* Make sure it doesn't exceed the viewport width */
+    }
+
+    .info {
+        margin-top: 0; /* Smaller value for better control */
+        padding: 20px; /* Ensure there's padding around the text */
+    }
     .logo {
         margin-bottom: 10px;
         width: 80%;
@@ -351,6 +362,7 @@ footer {
 
     .main-logo {
         display: none;
+        margin-bottom: 10px;
     }
 
     nav {
@@ -387,15 +399,7 @@ footer {
         max-width: 20vw;
     }
 
-    .main {
-        justify-content: flex-start; /* Aligns content to the top */
-        padding-top: 10vh; /* Adds padding to the top to lower all content */
-    }
 
-    .info {
-        margin-top: 30vh; /* Smaller value for better control */
-        padding: 20px; /* Ensure there's padding around the text */
-    }
 
     .about-us {
         padding-top: 16vh;
@@ -422,8 +426,6 @@ footer {
 
     .icon-description {
         max-width: 90%;
-        /* padding-right: 40px; */
-        /* padding-left: 30px; */
         margin-right: 40px;
         text-align: center;
     }
